@@ -17,7 +17,7 @@ const options = {
         const choosedTime = selectedDates[0].getTime();
 
         if (choosedTime <= curruntTime) {
-            alert("Please choose a date in the future");
+            Notiflix.Notify.failure("Please choose a date in the future");
             timerButton.disabled = true;
             return;
         }
@@ -31,6 +31,7 @@ const options = {
 
             if (timeLeftinMs <= 0) {
                 clearInterval(timer);
+                Notiflix.Notify.success("Time has left");
                 return;
             }
 
