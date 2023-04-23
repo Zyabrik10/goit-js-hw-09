@@ -14,6 +14,11 @@ document.querySelector('.form').addEventListener('submit', event =>{
   const step = Number(document.querySelector('input[name=step]').value);
   const amount = Number(document.querySelector('input[name=amount]').value);
 
+  if (delay < 0 || step < 0 || amount < 0){
+    Notiflix.Report.failure(`Only positive integers are allowed`);
+    return;
+  }
+
   setTimeout(()=>{
     let counter = 1;
 
